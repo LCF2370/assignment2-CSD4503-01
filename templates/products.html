@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block content %}
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Products</title>
 </head>
 <body>
-$END$
+    <div class="container">
+      <div class="row row-cols-3">
+        {% for product in products %}
+          <div class="col">
+              <div class="card shadow" style="width: 18rem;">
+                <img src="{{ product['image_path'] }}" class="card-img-top" alt="{{ product['name'] }}">
+                <div class="card-body text-start">
+                  <h5 class="card-title fs-3">${{ product['price'] }}</h5>
+                    <br>
+                  <p class="card-text fs-5">{{ product['name'] }}</p>
+                  <p class="card-text fs-6">{{ product['tag'] }}</p>
+                </div>
+              </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
 </body>
 </html>
+{% endblock %}
