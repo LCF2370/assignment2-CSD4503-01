@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ecf7eec-7e32-4d2f-bbb2-d52ba34fb125" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dell-headphones.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/headphones.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/hp-laptop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/jaei-mug.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/laptop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/mug.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4ecf7eec-7e32-4d2f-bbb2-d52ba34fb125" name="Changes" comment="Added new sample products. Style the web application using bootstrap and css.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/product1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/product2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +74,19 @@
       <option name="presentableId" value="Default" />
       <updated>1728486166865</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added new sample products. Style the web application using bootstrap and css.">
+      <option name="closed" value="true" />
+      <created>1728606493390</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728606493390</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added new sample products. Style the web application using bootstrap and css." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new sample products. Style the web application using bootstrap and css." />
   </component>
 </project>

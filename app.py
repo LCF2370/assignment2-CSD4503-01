@@ -1,11 +1,20 @@
+from dotenv import load_dotenv
 from flask import Flask, render_template
 from pymongo import MongoClient
+import os
 
 # Creates the application instance
 app = Flask(__name__)
 
+#Read the .env file
+load_dotenv()
+
+# Username and Password
+db_username = os.environ["MONGODB_USERNAME"]
+db_password = os.environ["MONGODB_PASSWORD"]
+
 # Creates the Mongodb Client
-mongodb_client = MongoClient("mongodb+srv://root:s0GVaV6lBLtaXrZg@cluster0.dr7cs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongodb_client = MongoClient(f"mongodb+srv://{db_username}:{db_username}@cluster0.dr7cs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 # To access database from the client
 db = mongodb_client["app"]
