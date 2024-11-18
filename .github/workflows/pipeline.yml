@@ -27,6 +27,12 @@ jobs:
       - name: Deploy the image
         run: docker run -d -p 5000:5000 flask-app:v1.0.0 # -d tag allows the container in the background
 
+      - name: Deploy the image
+        # the docker rm removes the running container and then we run the new container
+        run: |
+          docker rm -f $DOCKERHUB_REPOSITORY || true 
+          docker run -d -p 5000:5000 --name $DOCKERHUB_REPOSITORY -e MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }} -e MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }} $DOCKERHUB_NAMESPACE/$DOCKERHUB_REPOSITORY:$IMAGE_VERSION  # -d runs the container in the background
+
   #Stage 2: Running the unit testing
   unit-test:
     name: The job to unit test the application
