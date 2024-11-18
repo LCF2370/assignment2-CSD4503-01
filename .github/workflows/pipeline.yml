@@ -51,10 +51,7 @@ jobs:
         run: |
           python -m venv venv 
           venv/Scripts/activate
-          pip install flask
-          pip install pytest
-          pip install pymongo
-          pip install dotenv
+          pip install -r requirements.txt
 
       - name: Run unit tests inside the virtual environment
         run: |
