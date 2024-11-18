@@ -49,7 +49,7 @@ jobs:
 
       - name: Set up a virtual environment
         run: |
-          python -m -venv venv 
+          python -m venv venv 
           venv/Scripts/activate
           pip install flask
           pip install pytest
