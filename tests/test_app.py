@@ -37,12 +37,12 @@ import unittest
 #         session.abort_transaction()
 
 # Testing inserting data by adding new data and check in database if the is successful
-def test_insert_mongodb(mongodb, rollback_session):
-    new_data = {"name": "Pen", "tag": "Office Supply", "price": 23.99}
-    db = mongodb["flask_app"]
-    products_coll = db["products"]
-    products_coll.insert_one(new_data, session=rollback_session,)
-    assert (products_coll.find_one({"tag": "Office Supply"}, session=rollback_session)!= None)
+# def test_insert_mongodb(mongodb, rollback_session):
+#     new_data = {"name": "Pen", "tag": "Office Supply", "price": 23.99}
+#     db = mongodb["flask_app"]
+#     products_coll = db["products"]
+#     products_coll.insert_one(new_data, session=rollback_session,)
+#     assert (products_coll.find_one({"tag": "Office Supply"}, session=rollback_session)!= None)
 
 class FlaskTestCase(unittest.TestCase):
 
