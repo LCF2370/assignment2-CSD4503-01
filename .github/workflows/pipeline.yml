@@ -36,8 +36,8 @@ jobs:
     needs: [build-docker-image] # Wait for the build-docker-image to finish, then it starts
     #The instructions are defined as steps testing the solution hope it work
     steps:
-      - name: Echo unit testing of the application
-        run: echo "Unit test the docker image..."
+#      - name: Echo unit testing of the application
+#        run: echo "Unit test the docker image..."
 
       - name: Run test cases of the application
         run: pytest  tests/
