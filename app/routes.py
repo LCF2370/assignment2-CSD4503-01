@@ -9,7 +9,7 @@ load_dotenv()
 flask_app.debug = True
 # Username and Password
 db_username = os.environ["MONGODB_USERNAME"]
-db_password = os.environ["MONGODB_PASSWORD"]
+db_password = os.environ.get("MONGODB_PASSWORD")
 
 # Creates the Mongodb Client
 mongodb_client = MongoClient(f"mongodb+srv://{db_username}:{db_password}@cluster0.dr7cs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
