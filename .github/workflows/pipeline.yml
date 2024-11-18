@@ -3,7 +3,6 @@ on:
   #initiates the pipeline when there is  push event in the main branch
   push:
     branches:
-      - main
       - assignment-4
 jobs:
   #Stage 1: Building the docker image
