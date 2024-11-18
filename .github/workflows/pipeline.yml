@@ -38,3 +38,6 @@ jobs:
     steps:
       - name: Echo unit testing of the application
         run: echo "Unit test the docker image..."
+
+      - name: Run test cases of the application
+        run: pytest  tests/
