@@ -8,7 +8,7 @@ WORKDIR /
 
 # To copy the files to the working directory
 # First dot copy everything
-COPY requirements.txt .
+COPY . .
 
 # To install the dependency
 RUN pip install -r requirements.txt
