@@ -16,9 +16,10 @@ def mongodb():
     #Read the .env file
     load_dotenv()
     # Username and Password
-    db_username = os.environ.get("MONGODB_USERNAME")
-    db_password = os.environ.get("MONGODB_PASSWORD")
-    client = pymongo.MongoClient(f"mongodb+srv://{db_username}:{db_password}@cluster0.dr7cs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+    #db_username = os.environ.get("MONGODB_USERNAME")
+    #db_password = os.environ.get("MONGODB_PASSWORD")
+    client_url = os.environ.get("MONGODB_CLIENT")
+    client = pymongo.MongoClient(client_url)
     assert client.admin.command("ping")["ok"] != 0.0  # Check that the connection is okay.
     return client
 
