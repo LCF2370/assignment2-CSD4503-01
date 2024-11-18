@@ -12,9 +12,8 @@ import os
 
 #Read the .env file
 load_dotenv()
-flask_app.debug = True
 # Username and Password
-db_username = os.environ["MONGODB_USERNAME"]
+db_username = os.environ.get("MONGODB_USERNAME")
 db_password = os.environ.get("MONGODB_PASSWORD")
 
 # Creates the Mongodb Client
