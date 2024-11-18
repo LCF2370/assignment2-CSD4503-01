@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - assignment-4sa
 
 jobs:
   #Stage 1: Building the docker image
