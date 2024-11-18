@@ -37,3 +37,25 @@ jobs:
     steps:
       - name: Echo unit testing of the application
         run: echo "Unit test the docker image..."
+
+  #Stage 3: Running test cases
+  test:
+    name: Unit testing of the application
+    needs: [build-docker-image]
+    runs-on: csd-windows-local
+    steps:
+      - name: Clone and Checkout to the repository
+        uses: actions/checkout@v2
+
+      - name: Set up a virtual environment
+        run: |
+          python -m -venv venv 
+          venv/Scripts/activate
+          pip install flask
+          pip install pytest
+          pip install pymongo
+
+      - name: Run unit tests inside the virtual environment
+        run: |
+          venv/Scripts/activate
+          pytest tests/
