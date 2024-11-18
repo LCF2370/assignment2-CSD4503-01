@@ -1,3 +1,5 @@
+from ftplib import print_line
+
 import pytest
 from flask import jsonify
 
@@ -18,7 +20,10 @@ def mongodb():
     # Username and Password
     db_username = os.environ.get("MONGODB_USERNAME")
     db_password = os.environ.get("MONGODB_PASSWORD")
-    client = pymongo.MongoClient(f"mongodb+srv://{db_username}:{db_password}@cluster0.dr7cs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+    print("Secret Code")
+    print(db_username)
+    print(db_password)
+    client = pymongo.MongoClient("mongodb+srv://"+db_username+":"+db_password+"@cluster0.dr7cs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     assert client.admin.command("ping")["ok"] != 0.0  # Check that the connection is okay.
     return client
 
