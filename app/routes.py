@@ -19,7 +19,7 @@ db = mongodb_client["flask_app"]
 products_collection = db["products"]
 
 # Empty table
-products_collection.drop()
+# products_collection.drop()
 
 # To add data to MongoDB we can use the client and the functions insert_many() or insert_one()
 # insert_many() allows you to add a list of JSONs
