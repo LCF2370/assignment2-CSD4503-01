@@ -54,6 +54,7 @@ jobs:
           pip install flask
           pip install pytest
           pip install pymongo
+          pip install dotenv
 
       - name: Run unit tests inside the virtual environment
         run: |
