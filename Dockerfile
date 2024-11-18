@@ -8,12 +8,10 @@ WORKDIR /
 
 # To copy the files to the working directory
 # First dot copy everything
-COPY .
+COPY requirements.txt .
 
 # To install the dependency
-RUN pip install flask
-RUN pip install pymongo
-RUN pip install pytest
+RUN pip install -r requirements.txt
 
 # To open the port 5000 in the container
 EXPOSE  5000
