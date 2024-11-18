@@ -1,13 +1,12 @@
 from dotenv import load_dotenv
-from flask import render_template, jsonify
 from pymongo import MongoClient
 import os
 
-from app import flask_app
+from app import flask_app, render_template, jsonify
 
 #Read the .env file
 load_dotenv()
-
+flask_app.debug = True
 # Username and Password
 db_username = os.environ["MONGODB_USERNAME"]
 db_password = os.environ["MONGODB_PASSWORD"]
@@ -20,7 +19,7 @@ db = mongodb_client["flask_app"]
 products_collection = db["products"]
 
 # Empty table
-#products_collection.drop()
+products_collection.drop()
 
 # To add data to MongoDB we can use the client and the functions insert_many() or insert_one()
 # insert_many() allows you to add a list of JSONs
@@ -36,7 +35,7 @@ mock_data = [{"name": "Laptop", "tag": "Electronics", "price": 899.99, "image_pa
 products_collection.insert_many(mock_data)
 
 @flask_app.route("/")
-def index():
+def home():
     return render_template("home.html")
 
 @flask_app.route("/products")
