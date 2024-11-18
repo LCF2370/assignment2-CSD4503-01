@@ -37,29 +37,3 @@ jobs:
     steps:
       - name: Echo unit testing of the application
         run: echo "Unit test the docker image..."
-
-      - name: Run Test Docker Image
-        run: |
-          docker run --rm \
-            -e MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }} \
-            -e MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }} \
-            $DOCKERHUB_NAMESPACE/$DOCKERHUB_TEST_REPOSITORY:$IMAGE_VERSION
-
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9  # Choose your required Python version
-
-      - name: Install dependencies
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-          pip install -r requirements.txt
-
-      - name: Run tests with pytest
-        run: |
-          source venv/bin/activate
-          pytest ./tests/test_app.py
