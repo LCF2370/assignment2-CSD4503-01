@@ -1,14 +1,12 @@
 from dotenv import load_dotenv
-from flask import Flask,render_template, jsonify
+from flask import render_template, jsonify
 from pymongo import MongoClient
 import os
 
-#from app import flask_app
+from app import flask_app
 
 #Read the .env file
 load_dotenv()
-
-flask_app = Flask(__name__)
 
 # Username and Password
 db_username = os.environ["MONGODB_USERNAME"]
@@ -39,7 +37,7 @@ products_collection.insert_many(mock_data)
 
 @flask_app.route("/")
 def index():
-    return render_template(template_name_or_list="home.html")
+    return render_template("home.html")
 
 @flask_app.route("/products")
 def products():
@@ -51,5 +49,3 @@ def mongo_conn():
     client = mongodb_client
     client.products.command('ping')
     return jsonify({"status": "Successfully Connected to MongoDB"}), 200
-
-flask_app.run(host="0.0.0.0", port=5000)
