@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Deploy the image
         run: |
-          docker run -d -p 5000:5000 -e MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }} -e MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }} flask-app:v1.0.0
+          docker run -d -p 5000:5000 -e MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }} -e MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }} flask-app:v1.0.0 # -d runs the container in the background
 
   #Stage 2: Running the unit testing
   unit-test:

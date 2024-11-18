@@ -1,8 +1,8 @@
+from app import flask_app, render_template, jsonify
+
 from dotenv import load_dotenv
 from pymongo import MongoClient
 import os
-
-from app import flask_app, render_template, jsonify
 
 #Read the .env file
 load_dotenv()
@@ -48,3 +48,8 @@ def mongo_conn():
     client = mongodb_client
     client.products.command('ping')
     return jsonify({"status": "Successfully Connected to MongoDB"}), 200
+
+def db_collection():
+    dbs = mongodb_client["flask_app"]
+    products_collections = dbs["products"]
+    return products_collections
