@@ -10,18 +10,14 @@ from pymongo import MongoClient
 import pymongo
 import os
 
-#Read the .env file
-load_dotenv()
-# Username and Password
-db_username = os.environ.get("MONGODB_USERNAME")
-db_password = os.environ.get("MONGODB_PASSWORD")
-
-# Creates the Mongodb Client
-# mongodb_client = MongoClient(f"mongodb+srv://{db_username}:{db_password}@cluster0.dr7cs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-
 # Reference: https://www.mongodb.com/developer/products/mongodb/pytest-fixtures-and-pypi/
 @pytest.fixture(scope="session")
 def mongodb():
+    #Read the .env file
+    load_dotenv()
+    # Username and Password
+    db_username = os.environ.get("MONGODB_USERNAME")
+    db_password = os.environ.get("MONGODB_PASSWORD")
     client = pymongo.MongoClient(f"mongodb+srv://{db_username}:{db_password}@cluster0.dr7cs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     assert client.admin.command("ping")["ok"] != 0.0  # Check that the connection is okay.
     return client
