@@ -12,6 +12,8 @@ COPY . .
 
 # To install the dependency
 RUN pip install flask
+RUN pip install pymongo
+RUN pip install pytest
 
 # To open the port 5000 in the container
 EXPOSE  5000
